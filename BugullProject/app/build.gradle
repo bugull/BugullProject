@@ -7,11 +7,11 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion build_versions.target_sdk
+    compileSdkVersion target_sdk
     defaultConfig {
         applicationId "com.bugull.bugullproject"
-        minSdkVersion build_versions.min_sdk
-        targetSdkVersion build_versions.target_sdk
+        minSdkVersion min_sdk
+        targetSdkVersion target_sdk
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -27,18 +27,17 @@ android {
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // basic
-    implementation deps.kotlin.stdlib
-    implementation deps.support.app_compat
-    implementation deps.support.core_ktx
-    implementation deps.support.multidex
-    implementation deps.junit
-    implementation deps.atsl.ext_junit
-    androidTestImplementation deps.espresso.core
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test:runner:$runner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation deps.constraint_layout
+    //dagger
+    implementation "com.google.dagger:dagger:$dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
 
-    // Dagger
-    implementation deps.dagger.runtime
-    annotationProcessor deps.dagger.compiler
 }
