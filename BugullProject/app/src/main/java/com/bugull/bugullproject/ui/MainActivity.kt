@@ -1,7 +1,8 @@
-package com.bugull.bugullproject
+package com.bugull.bugullproject.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bugull.bugullproject.R
 
 class MainActivity : AppCompatActivity() {
 
