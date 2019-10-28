@@ -14,7 +14,7 @@ buildscript {
     ext.runner = '1.2.0'
     ext.espresso_core = '3.2.0'
     ext.dagger = '2.25.2'
-    
+
     repositories {
         google()
         jcenter()
