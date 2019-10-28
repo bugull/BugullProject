@@ -14,6 +14,12 @@ buildscript {
     ext.runner = '1.2.0'
     ext.espresso_core = '3.2.0'
     ext.dagger = '2.25.2'
+    ext.lifecycle = '2.0.0'
+    ext.coroutines = '1.1.0'
+    ext.immersionbar = '2.3.3'
+    ext.retrofit2 = '2.6.0'
+    ext.okhttp = '3.12.0'
+    ext.log = '3.10.0'
 
     repositories {
         google()

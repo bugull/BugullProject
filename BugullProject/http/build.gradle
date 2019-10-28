@@ -42,11 +42,10 @@ dependencies {
     androidTestImplementation "androidx.test:runner:$runner"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
 
-    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
+    implementation "com.squareup.okhttp3:okhttp:$okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$log"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
 }
