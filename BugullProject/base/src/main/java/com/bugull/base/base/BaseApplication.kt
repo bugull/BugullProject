@@ -6,8 +6,6 @@ abstract class BaseApplication: MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        INSTANCE = this
-
         /* 多进程导致Application#onCreate()执行多次 */
         if (isRunningCurrentProcess) {
             initCurrentProcess()
@@ -22,8 +20,6 @@ abstract class BaseApplication: MultiDexApplication() {
      */
     abstract fun initCurrentProcess()
 
-    companion object {
-        lateinit var INSTANCE: BaseApplication
-    }
+
 }
 

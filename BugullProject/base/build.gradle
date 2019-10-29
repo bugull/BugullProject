@@ -39,7 +39,7 @@ dependencies {
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test:runner:$runner"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
-    implementation "com.android.support:multidex:$multidex"
+    implementation "androidx.multidex:multidex:$multidex"
 
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"

@@ -2,7 +2,6 @@ package com.bugull.base.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.bugull.base.base.BaseApplication
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
@@ -10,10 +9,10 @@ import kotlin.reflect.KProperty
  *  SharedPreference
  */
 @Suppress("UNCHECKED_CAST")
-class Sp<T>( private val mKey: String, private val mDefaultValue: T) :
+class Sp<T>(private val context: Context, private val mKey: String, private val mDefaultValue: T) :
     ReadWriteProperty<Any?, T> {
     private val prefs: SharedPreferences by lazy {
-        BaseApplication.INSTANCE.applicationContext.getSharedPreferences(BaseApplication.INSTANCE.packageName, Context.MODE_PRIVATE)
+        context.applicationContext.getSharedPreferences(context.packageName, Context.MODE_PRIVATE)
     }
 
     override fun getValue(thisRef: Any?, property: KProperty<*>): T {

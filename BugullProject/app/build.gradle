@@ -35,6 +35,7 @@ dependencies {
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test:runner:$runner"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
+    implementation "androidx.multidex:multidex:$multidex"
 
     //dagger
     implementation "com.google.dagger:dagger:$dagger"
