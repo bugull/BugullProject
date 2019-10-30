@@ -15,12 +15,4 @@ open class BaseRepository {
         return call.invoke()
     }
 
-    suspend fun executeResponse(response: BaseResponse<Any>, successBlock: suspend CoroutineScope.() -> Unit,
-                                errorBlock: suspend CoroutineScope.() -> Unit) {
-        coroutineScope {
-            if (!response.success) errorBlock()
-            else successBlock()
-        }
-    }
-
 }
