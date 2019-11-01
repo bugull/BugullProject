@@ -39,4 +39,9 @@ abstract class BaseActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    override fun onDestroy() {
+        ImmersionBar.with(this)
+            .destroy()
+        super.onDestroy()
+    }
 }
