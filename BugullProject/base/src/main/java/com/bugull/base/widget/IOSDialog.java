@@ -2,7 +2,10 @@ package com.bugull.base.widget;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -77,12 +80,60 @@ public class IOSDialog {
         return this;
     }
 
+    public IOSDialog setTitle(SpannableString title) {
+        showTitle = true;
+        titleTv.setMovementMethod(LinkMovementMethod.getInstance());
+        titleTv.setHighlightColor(context.getResources().getColor(android.R.color.transparent));
+        titleTv.setText(title);
+        return this;
+    }
+
+    public IOSDialog setTitleGravity(int gravity) {
+        try{
+            titleTv.setGravity(gravity);
+        }catch (Exception e){
+            titleTv.setGravity(Gravity.CENTER);
+        }
+        return this;
+    }
+
+    public IOSDialog setTitleSize(float size){
+        try{
+            titleTv.setTextSize(size);
+        }catch (Exception e){ }
+        return this;
+    }
+
     public IOSDialog setMsg(String msg) {
         showMsg = true;
         if ("".equals(msg)) {
             msgTv.setText("内容");
         } else {
             msgTv.setText(msg);
+        }
+        return this;
+    }
+
+    public IOSDialog setMsg(SpannableString msg) {
+        showMsg = true;
+        msgTv.setMovementMethod(LinkMovementMethod.getInstance());
+        msgTv.setHighlightColor(context.getResources().getColor(android.R.color.transparent));
+        msgTv.setText(msg);
+        return this;
+    }
+
+    public IOSDialog setMsgSize(float size){
+        try{
+            msgTv.setTextSize(size);
+        }catch (Exception e){ }
+        return this;
+    }
+
+    public IOSDialog setMsgGravity(int gravity) {
+        try{
+            msgTv.setGravity(gravity);
+        }catch (Exception e){
+            msgTv.setGravity(Gravity.CENTER);
         }
         return this;
     }

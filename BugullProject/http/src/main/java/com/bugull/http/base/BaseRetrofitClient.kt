@@ -21,7 +21,7 @@ abstract class BaseRetrofitClient {
             if (BuildConfig.DEBUG) {
                 logging.level = HttpLoggingInterceptor.Level.BODY
             } else {
-                logging.level = HttpLoggingInterceptor.Level.BASIC
+                logging.level = HttpLoggingInterceptor.Level.NONE
             }
 
             builder.addInterceptor(logging)
